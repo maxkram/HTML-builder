@@ -11,8 +11,14 @@ fs.readdir(`${__dirname}/secret-folder`, (err, data) => {
     fs.stat(path.join(__dirname, 'secret-folder', file), (err, info) => {
       if (err) throw err;
       if (!info.isDirectory()) {
-        str = obj.name + ' - ' + obj.ext.slice(1) + ' - ' + info.size;
-        console.log(str);
+        str =
+          obj.name +
+          ' - ' +
+          obj.ext.slice(1) +
+          ' - ' +
+          Math.round(info.size / 1024) +
+          ' kb';
+        console.log('\x1b[36m', str);
       }
     });
   });
