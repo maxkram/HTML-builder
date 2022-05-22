@@ -3,7 +3,7 @@ const path = require('path');
 const process = require('process');
 
 let phrase = () => {
-  process.stdout.write('Напишите что-нибудь душевное: ');
+  console.log('Напишите что-нибудь душевное: ');
 };
 
 let makeTxt = () => {
@@ -28,4 +28,5 @@ process.stdin.on('data', (data) => {
     );
   }
 });
+
 phrase();
